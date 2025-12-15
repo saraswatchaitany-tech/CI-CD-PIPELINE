@@ -1,1 +1,25 @@
+name: CI Pipeline Demo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run HTML Validation (Simple Check)
+        run: |
+          echo "Validating HTML file..."
+          ls
+          cat index.html
+
+      - name: Build Completed
+        run: echo "Build Successful!"
 
